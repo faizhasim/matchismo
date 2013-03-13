@@ -105,24 +105,4 @@
     return (index < [self.cards count])? self.cards[index] : nil;
 }
 
-- (void)redealUsingDeck:(Deck *)deck
-              matchMode:(NSUInteger)matchMode {
-    self.score = 0;
-    self.scoreChange = 0;
-    self.flippedCards = @[];
-    
-    if (matchMode > 1 && matchMode <= 4 && matchMode <= self.cardCount) {
-        self.matchMode = matchMode;
-    } else {
-        self.matchMode = 2;
-    }
-
-    for (int i = 0; i < self.cardCount; i++) {
-        Card *card = [deck drawRandomCard];
-        if (card) {
-            self.cards[i] = card;
-        }
-    }
-}
-
 @end

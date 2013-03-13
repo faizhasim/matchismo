@@ -29,9 +29,6 @@
 
 - (Card *)cardAtIndex:(NSUInteger)index;
 
-- (void)redealUsingDeck:(Deck *)deck
-              matchMode:(NSUInteger)matchMode;
-
 @property (readonly, nonatomic) int score;
 @property (readonly, nonatomic) int scoreChange;
 @property (readonly, nonatomic, strong) NSArray* flippedCards;

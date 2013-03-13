@@ -12,3 +12,9 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#ifndef __OPTIMIZE__
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s %s:%d %s\n", __PRETTY_FUNCTION__, [[[NSString stringWithFormat:@"%s", __FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define MyLog(...)   {}
+#endif
