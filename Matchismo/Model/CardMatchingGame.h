@@ -11,10 +11,9 @@
 #import "Deck.h"
 
 @interface CardMatchingGame : NSObject
-#define MATCH_BONUS 4
-#define MISMATCH_PENALTY -2
-#define FLIP_COST -1
-
+extern const NSUInteger DefaultMatchBonus;
+extern const NSUInteger DefaultMismatchedPenalty;
+extern const NSUInteger DefaultFlipCost;
 
 
 // designated initializer
