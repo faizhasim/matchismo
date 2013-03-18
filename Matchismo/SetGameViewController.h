@@ -7,8 +7,7 @@
 //
 
 #import "CardGameViewController.h"
-#import "UpdatableUI.h"
 
-@interface SetGameViewController : CardGameViewController <UpdatableUI>
+@interface SetGameViewController : CardGameViewController
 
 @end

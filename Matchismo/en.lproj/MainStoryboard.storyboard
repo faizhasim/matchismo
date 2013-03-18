@@ -917,6 +917,7 @@
         <class className="MatchingCardGameViewController" superclassName="CardGameViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MatchingCardGameViewController.h"/>
             <relationships>
+                <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="matchModeSelection" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
