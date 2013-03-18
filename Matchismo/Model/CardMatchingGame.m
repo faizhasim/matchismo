@@ -8,6 +8,10 @@
 
 #import "CardMatchingGame.h"
 
+const NSUInteger DefaultMatchBonus = 4;
+const NSUInteger DefaultMismatchedPenalty = -2;
+const NSUInteger DefaultFlipCost = -1;
+
 @interface CardMatchingGame()
 @property (readwrite, nonatomic) int score;
 @property (readwrite, nonatomic) int scoreChange;
@@ -79,21 +83,21 @@
             self.flippedCards = [NSArray arrayWithArray:flippedCards];
             if ([flippedCards count] == self.matchMode) {
                 int matchScore = [card match:cardsForComparison];
-                if (matchScore) {
+                if (matchScore > 0) {
                     card.unplayable = YES;
                     for (Card *otherCard in self.flippedCards) {
                         otherCard.unplayable = YES;
                     }
-                    self.scoreChange += matchScore * MATCH_BONUS;
+                    self.scoreChange += matchScore * DefaultMatchBonus;
                 } else {
                     for (Card *otherCard in self.flippedCards) {
                         otherCard.faceUp = NO;
                     }
-                    self.scoreChange += MISMATCH_PENALTY;
+                    self.scoreChange += DefaultMismatchedPenalty;
                 }
             }
             
-            self.scoreChange += FLIP_COST;
+            self.scoreChange += DefaultFlipCost;
         }
         card.faceUp = !card.isFaceUp;
     }

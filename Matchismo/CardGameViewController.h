@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CardGameViewController : UIViewController
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UILabel *lastFlipResultsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
+- (IBAction)redeal;
+- (IBAction)flipCard:(UIButton *)sender;
 @end
